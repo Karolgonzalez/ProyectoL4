@@ -15,12 +15,13 @@ namespace Always_Coffee_Time.BL
             
         }
 
-        
 
-        /* public Contexto(): base("Always_Coffee_TimeDB")
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            //Database.SetInitializer(new DatosdeInicio()); // Agregar datos de inicio al momento de crear la base de datos
+        }
 
-        }*/
         public DbSet<Producto> Productos { get; set; }
-    }
-}
+        public DbSet<Categoria> Categorias{ get; set;}
